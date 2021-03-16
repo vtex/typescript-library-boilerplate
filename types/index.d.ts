@@ -1,7 +1,8 @@
+import type { PureComponent } from 'react';
 /**
  * A Branded Type for values parseable to number.
  */
-export declare type NumberParseable = (number | string | boolean) & {
+export declare type NumberParseable = (number | string | boolean | PureComponent) & {
     readonly isNumberParseble: unique symbol;
 };
 /**
