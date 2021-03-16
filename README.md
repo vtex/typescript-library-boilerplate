@@ -1,3 +1,13 @@
+<!--START REMOVE-->
+<br/><br/>
+
+# <center>🚀 Just run `node setup` to start a new project</center>
+
+<br/><br/><br/><br/><br/><br/><br/><br/>
+
+
+
+<!--END REMOVE-->
 # [libraryNameWithSpacesAndUpperCases]
 
 [![Build Status](https://travis-ci.org/[repositoryOwner]/[repositoryName].svg?branch=master)](https://travis-ci.org/[repositoryOwner]/[repositoryName])

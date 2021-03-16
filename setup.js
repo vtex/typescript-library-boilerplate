@@ -37,6 +37,25 @@ const getFiles = async (directory) => {
   return files.flat(1)
 }
 
+const removeInstructions = async () => {
+  const startToken = '<!--START REMOVE-->'
+  const endToken = '<!--END REMOVE-->'
+
+  const readmePath = path.join(__dirname, 'README.md')
+  const contents = await fs.readFile(readmePath, { encoding: 'utf-8' })
+
+  const startRemove = contents.indexOf(startToken)
+  const endRemove = contents.indexOf(endToken)
+
+  if (startRemove !== -1 && endRemove !== -1) {
+    const newContent =
+      contents.slice(0, startRemove) +
+      contents.slice(endRemove + endToken.length + 1)
+
+    return fs.writeFile(readmePath, newContent)
+  }
+}
+
 const gettingFiles = getFiles(path.resolve(__dirname))
 
 const replaceInFile = (matcher, replacer) => async (path) => {
@@ -125,6 +144,7 @@ What is your full name? (used in MIT License)
       ''
     )
   )
+  .then(() => removeInstructions())
   .then(() => {
     rl.close()
     fs.unlink(path.resolve(__filename))
