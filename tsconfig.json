@@ -1,7 +1,4 @@
 {
   "extends": "@vtex/tsconfig",
-  "compilerOptions": {
-    "types": ["jest"]
-  },
   "include": ["./src/**/*.ts", "./src/**/*.tsx"]
 }
